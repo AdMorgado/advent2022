@@ -1,5 +1,5 @@
 
-filename = "example.txt"
+filename = "input.txt"
 
 
 SCORE_LOSS = 0
