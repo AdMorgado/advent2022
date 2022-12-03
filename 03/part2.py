@@ -2,24 +2,17 @@
 filename = "input.txt"
 
 def getLetterPriority(letter):
+    letterOrd = ord(letter)
     if letter.isupper():
-        return ord(letter) - ord('A') + 27
+        return letterOrd - ord('A') + 27
     else:
-        return ord(letter) - ord('a') + 1
-
-def getOcurrence(rucksack): 
-    ocurrence = set()
-
-    for item in rucksack:
-        ocurrence.add(item)
-    
-    return ocurrence
+        return letterOrd - ord('a') + 1
 
 
 def getBadge(group): 
 
-    sack1 = getOcurrence(group[0])
-    sack2 = getOcurrence(group[1])
+    sack1 = set(group[0])
+    sack2 = set(group[1])
 
     return next(item for item in group[2] if item in sack1 and item in sack2) 
 

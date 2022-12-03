@@ -8,14 +8,12 @@ def getLetterPriority(letter):
         return ord(letter) - ord('a') + 1
 
 def getPriority(rucksack):
-    compartment = set()
 
     halfLen = len(rucksack) // 2
-    for i in range(0, halfLen):
-        compartment.add(rucksack[i]) 
-
+    firstCompartment = set(rucksack[slice(0, halfLen)])
+    
     for i in range(halfLen, len(rucksack)):
-        if(rucksack[i] in compartment):
+        if(rucksack[i] in firstCompartment):
             sharedItem = rucksack[i]
     
     return getLetterPriority(sharedItem)
