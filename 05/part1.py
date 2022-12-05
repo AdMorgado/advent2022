@@ -24,13 +24,13 @@ with open(filename, "r") as file:
     moves = list(map(makeIntoMove, moveInput.splitlines()))
 
 def makeMove(stacks, move):
-    sorc = move[1]-1
-    dest = move[2]-1
+    sorcIdx = move[1]-1
+    destIdx = move[2]-1
 
-    removed = stacks[sorc][-move[0]:]
-    stacks[sorc] = stacks[sorc][:-move[0]] 
+    removed = stacks[sorcIdx][-move[0]:]
+    stacks[sorcIdx] = stacks[sorcIdx][:-move[0]] 
 
-    stacks[dest] += reversed(removed)
+    stacks[destIdx] += reversed(removed)
 
 for move in moves:
     makeMove(stacks, move)
