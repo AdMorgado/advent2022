@@ -2,7 +2,9 @@ import numpy as np
 
 filename = "input.txt"
 
-input = [[int(char) for char in line] for line in open(filename, "r").read().split("\n")]
+with open(filename, "r") as f:
+    input = [[int(char) for char in line] for line in f.read().split("\n")]
+    
 grid = np.array(input, dtype=np.int8)
 score = np.ones(grid.shape, dtype=np.int32)
 

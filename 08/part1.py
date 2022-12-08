@@ -3,7 +3,9 @@ import numpy as np
 
 filename = "input.txt"
 
-input = [[int(char) for char in line] for line in open(filename, "r").read().split("\n")]
+with open(filename, "r") as f:
+    input = [[int(char) for char in line] for line in f.read().split("\n")]
+    
 grid = np.matrix(input, dtype=np.int8)
 isVisible = np.zeros(grid.shape, dtype=bool)
 
