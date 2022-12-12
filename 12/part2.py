@@ -50,6 +50,4 @@ while queue:
         steps[neighbor] = nSteps + 1
 
 
-print("-- STEPS --")
-print(steps)
 print("\nTotal Steps:", totalSteps)
